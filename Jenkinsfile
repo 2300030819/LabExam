@@ -21,12 +21,15 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                echo 'Deploying build files to local folder...'
-                bat 'xcopy /E /I /Y dist\\* C:\Users\maha\hospital-deploy\\'
-            }
-        }
+    steps {
+        echo 'Deploying build files to local folder...'
+        // Option 1: using double backslashes
+        bat 'xcopy /E /I /Y dist\\* C:\\Users\\mah\\hospital-deploy\\'
+        // OR Option 2: using forward slashes
+        // bat 'xcopy /E /I /Y dist/* C:/Users/mah/hospital-deploy/'
     }
+}
+
 
     post {
         success {
