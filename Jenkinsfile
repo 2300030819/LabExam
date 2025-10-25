@@ -29,6 +29,7 @@ pipeline {
         // bat 'xcopy /E /I /Y dist/* C:/Users/mah/hospital-deploy/'
     }
 }
+    }
 
 
     post {
